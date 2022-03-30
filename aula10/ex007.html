@@ -1,0 +1,53 @@
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Somando Números</title>
+
+  <style>
+    body {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      font: normal 18pt Arial;
+      background: rgb(21, 22, 27); 
+    }
+    .container {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+    input {
+      font: normal 18pt Arial;
+      width: 100px;
+    }
+    button {
+      height: 35px;
+    }
+    #res {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1"> + 
+    <input type="number" name="txtn2" id="txtn2">
+    <button onclick="somar()">Somar Valores</button>
+    <div id="res">Resultado</div>
+  </div>
+
+  <script>
+    function somar() {
+      var tn1 = document.getElementById('txtn1') //as duas formas de selecionar o ID irão funcionar!
+      var tn2 = document.querySelector('input#txtn2') //usando # para ID e . para CLASS.
+      var n1 = Number(tn1.value) //como o valor retornado é String, aqui é feito a conversão.
+      var n2 = Number(tn2.value)
+      var s = n1 + n2
+      res.innerHTML = `A soma entre ${n1} e ${n2} é <strong><font color="red">${s}</font></strong>`
+    }
+  </script>
+</body>
+</html>
