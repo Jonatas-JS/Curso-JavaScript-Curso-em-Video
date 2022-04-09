@@ -46,6 +46,7 @@
       var n1 = Number(tn1.value) //como o valor retornado é String, aqui é feito a conversão.
       var n2 = Number(tn2.value)
       var s = n1 + n2
+      s = s.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
       res.innerHTML = `A soma entre ${n1} e ${n2} é <strong><font color="red">${s}</font></strong>`
     }
   </script>
