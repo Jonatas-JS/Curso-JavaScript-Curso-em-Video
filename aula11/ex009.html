@@ -1,0 +1,27 @@
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nacionalidade</title>
+</head>
+<body>
+  <h1>Naturalidade</h1>
+  Insira seu país de origem: <input type="text" name="countryOrigin" id="countryOrigin">
+  <input type="button" value="Verificar" onclick="toCheck()">
+  <div id="res"></div>
+
+  <script>
+    function toCheck() {
+      var country = document.querySelector('input#countryOrigin').value
+      var res = document.getElementById('res')
+
+      if (country.toLowerCase() != 'brasil') {
+// posso tbm fazer assim  if (document.querySelector('input#countryOrigin').value.toLowerCase() != 'brasil')
+        res.innerHTML += '<p>Você é estrangeiro, procure as medidas cabíveis</p>'
+      }
+      res.innerHTML += '<p><strong>Aproveite sua estadia!</strong></p>'
+    }
+  </script>
+</body>
+</html>
