@@ -1,0 +1,72 @@
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      font: normal 12pt Arial;
+      background: rgb(68, 125, 199); 
+    }
+    .container {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+    }
+    button {
+      height: 35px;
+    }
+  </style>
+</head>
+<body onload="load()">
+  <div class="container">
+    <h1>Pergunta</h1>
+
+    <div class="pergunta"></div>
+
+    <input type="text" id="res" placeholder="Resposta">
+    <p><input type="button" value="Enviar respostra" onclick="resposta()"></p>
+    <div class="correcao"></div>
+  </div>
+
+  <script>
+      var diaNome = new Array ("domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado")
+      var diaSem = new Date()
+
+      function load() {
+      var pergunta = document.querySelector('.pergunta')
+      
+      var ontem = diaNome[diaSem.getDay()-1]
+      var amanha = diaNome[diaSem.getDay()+1]
+
+      pergunta.innerHTML = `<p>Se ontem foi ${ontem} e amanhã será ${amanha}, que dia é hoje?</p>`
+    }
+
+    function resposta() {
+      var hoje = diaSem.getDay()
+      console.log(hoje)
+      var resposta = document.querySelector('#res').value.toLowerCase()
+
+      if (resposta == diaNome[hoje]) {
+        var correto = document.querySelector('.correcao')
+        correto.innerHTML = '<p>Correto!</p>'
+        console.log('correto')
+      }else {
+        var errado = document.querySelector('.correcao')
+        console.log('errado')
+        errado.innerHTML = '<p>Errado!</p>'
+      }
+      
+    }
+  </script>
+</body>
+</html>

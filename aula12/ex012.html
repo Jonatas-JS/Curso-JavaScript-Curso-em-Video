@@ -1,0 +1,54 @@
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      font: normal 12pt Arial;
+      background: rgb(68, 125, 199); 
+    }
+    .container {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+    input {
+      font: bold 11pt Arial;
+      width: 100%;
+    }
+    button {
+      height: 35px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hora Certa</h1>
+    <input type="button" value="Click e veja" onclick="horaCerta()">
+    <div class="res"></div>
+  </div>
+
+  <script>
+    function horaCerta() {
+      var relogio = new Date()
+      var hora = relogio.getHours() + ':' + relogio.getMinutes()
+      var res = document.querySelector('.res')
+      res.innerHTML = `<p>A hora certa é ${hora}h.</p>`
+
+      if (hora < 12) {
+        res.innerHTML += '<p>Bom dia!</p>'
+      }else if (hora < 18) {
+        res.innerHTML += '<p>Boa tarde!</p>'
+      }else {
+        res.innerHTML += '<p>Boa noite!</p>'
+      }
+    }
+  </script>
+</body>
+</html>
