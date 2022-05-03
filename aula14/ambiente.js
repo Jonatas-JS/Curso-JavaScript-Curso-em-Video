@@ -16,7 +16,7 @@ console.log('Vamos começar')
 //Incremente: depois de finalizar o que tem dentro bloco, quando ele voltar para o início do FOR fará o incremente.
 
 console.log(cont)
-//Obs.: depois do console.log(cont) que ele volta para o FOR ele vai fazer apenas o incremente primeiro e o condção
+//Obs.: depois do console.log(cont) que ele volta para o FOR ele vai fazer apenas o incremente primeiro e depois a condição
  }
  console.log('Terminou')
  //Todo o processo de execução pode ser acompanhado pelo Debug(atalho F5) e Debug Console(próximo ao Terminal)
